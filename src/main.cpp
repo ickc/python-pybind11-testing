@@ -27,7 +27,6 @@ void fma_vector_weights_arrays(int n_out, int n_weights, double * out, double co
     for (int i = 0; i < n_weights; ++i) {
         double const weight = weights[i];
         double * const array = arrays[i];
-        # pragma omp parallel for simd
         for (int j = 0; j < n_out; ++j) {
             out[j] += weight * array[j];
         }
